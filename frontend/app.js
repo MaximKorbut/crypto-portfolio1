@@ -68,7 +68,10 @@ eth*prices.ethereum.usd+
 sol*prices.solana.usd;
 
 document.getElementById("total").innerHTML=
-"$"+total.toFixed(2);
+"$"+total.toLocaleString(undefined,{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+});
 
 }
 
