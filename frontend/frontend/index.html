@@ -2,3 +2,23 @@
 <p style="text-align:center;">
 Live cryptocurrency prices powered by CoinGecko API
 </p>
+<div class="card">
+
+<h2>My Portfolio</h2>
+
+<label>Bitcoin (BTC)</label>
+<input id="btc" type="number" value="0" min="0" step="0.0001">
+
+<label>Ethereum (ETH)</label>
+<input id="eth" type="number" value="0" min="0" step="0.0001">
+
+<label>Solana (SOL)</label>
+<input id="sol" type="number" value="0" min="0" step="0.01">
+
+<button onclick="calculatePortfolio()">
+Calculate Portfolio
+</button>
+
+<h2 id="total">$0</h2>
+
+</div>
