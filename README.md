@@ -34,4 +34,4 @@ A full-stack cryptocurrency tracker built with FastAPI and JavaScript.
 
 ## Version
 
-v1.0
+v2.0
