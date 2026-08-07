@@ -11,3 +11,6 @@ def get_prices():
     )
 
     return response.json()
+document
+.getElementById("loading")
+.style.display="none";
