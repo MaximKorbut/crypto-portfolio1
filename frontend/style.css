@@ -7,3 +7,12 @@ width:95%;
 }
 
 }
+button{
+margin-bottom:15px;
+}
+
+label{
+display:block;
+margin-top:10px;
+font-weight:bold;
+}
