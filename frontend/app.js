@@ -1,5 +1,28 @@
 async function loadPrices(){
 
+try{
+
+const response =
+await fetch("http://127.0.0.1:8000/prices");
+
+prices =
+await response.json();
+
+...
+
+}catch(error){
+
+document.getElementById("prices").innerHTML=
+`
+<div class="card">
+Unable to load cryptocurrency prices.
+</div>
+`;
+
+}
+
+}async function loadPrices(){
+
     const response = await fetch("http://127.0.0.1:8000/prices");
 
     const data = await response.json();
