@@ -23,7 +23,14 @@ async function loadPrices(){
     `;
 
 }
+document.getElementById("btc").value =
+localStorage.getItem("btc") || 0;
 
+document.getElementById("eth").value =
+localStorage.getItem("eth") || 0;
+
+document.getElementById("sol").value =
+localStorage.getItem("sol") || 0;
 loadPrices();
 let prices = {};
 
