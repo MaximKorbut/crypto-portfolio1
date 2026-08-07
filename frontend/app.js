@@ -76,3 +76,4 @@ maximumFractionDigits:2
 }
 
 loadPrices();
+setInterval(loadPrices, 60000);
