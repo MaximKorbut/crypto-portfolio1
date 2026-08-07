@@ -31,3 +31,16 @@ background:white;
 color:#111827;
 
 }
+#searchCoin{
+
+width:100%;
+padding:12px;
+margin:20px 0;
+
+border-radius:8px;
+
+border:none;
+
+font-size:16px;
+
+}
