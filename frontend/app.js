@@ -125,3 +125,20 @@ function toggleTheme(){
     }
 
 }
+document
+.getElementById("searchCoin")
+.addEventListener("input",function(){
+
+const value=this.value.toLowerCase();
+
+document
+.querySelectorAll(".card")
+.forEach(card=>{
+
+card.style.display=
+card.innerText.toLowerCase().includes(value)
+?"block":"none";
+
+});
+
+});
