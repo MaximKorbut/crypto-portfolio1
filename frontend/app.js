@@ -107,3 +107,21 @@ maximumFractionDigits:2
 
 loadPrices();
 setInterval(loadPrices, 60000);
+function toggleTheme(){
+
+    document.body.classList.toggle("light");
+
+    const button =
+    document.getElementById("themeButton");
+
+    if(document.body.classList.contains("light")){
+
+        button.innerHTML="☀️ Light Mode";
+
+    }else{
+
+        button.innerHTML="🌙 Dark Mode";
+
+    }
+
+}
