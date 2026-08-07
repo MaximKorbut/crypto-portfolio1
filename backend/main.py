@@ -8,5 +8,8 @@ app = FastAPI(
 @app.get("/")
 def home():
     return {
-        "message": "Crypto Portfolio API is running"
-    }
+        return{
+"status":"online",
+"version":"2.0",
+"service":"Crypto Portfolio API"
+}
