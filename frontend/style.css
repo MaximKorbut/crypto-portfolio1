@@ -16,3 +16,18 @@ display:block;
 margin-top:10px;
 font-weight:bold;
 }
+.light{
+
+background:#F5F5F5;
+
+color:#111827;
+
+}
+
+.light .card{
+
+background:white;
+
+color:#111827;
+
+}
