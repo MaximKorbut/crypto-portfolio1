@@ -15,4 +15,16 @@ def home():
 }
 @app.get("/history/{coin}")
 def history(coin: str):
-    return get_history(coin)
+
+    supported_coins = {
+        "bitcoin",
+        "ethereum",
+        "solana"
+    }
+
+    if coin.lower() not in supported_coins:
+        return {
+            "error": "Unsupported cryptocurrency"
+        }
+
+    return get_history(coin.lower())
