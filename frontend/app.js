@@ -347,3 +347,17 @@ function removeCoin(coinId) {
 
     renderPortfolio();
 }
+function removeCoin(coinId) {
+
+    portfolio =
+        portfolio.filter(
+            coin => coin !== coinId
+        );
+
+    localStorage.setItem(
+        "portfolio",
+        JSON.stringify(portfolio)
+    );
+
+    renderPortfolio();
+}
