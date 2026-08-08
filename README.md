@@ -35,3 +35,9 @@ A full-stack cryptocurrency tracker built with FastAPI and JavaScript.
 ## Version
 
 v2.0
+## Screenshots
+
+- Live prices
+- Portfolio calculator
+- Market chart
+- Dark mode
