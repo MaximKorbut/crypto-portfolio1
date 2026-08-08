@@ -59,3 +59,34 @@ canvas{
     max-width:100%;
     margin-top:20px;
 }
+.search-result {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:12px;
+
+    margin-top:8px;
+
+    background:#374151;
+
+    border-radius:8px;
+
+}
+
+.search-result img {
+
+    border-radius:50%;
+
+}
+
+.search-result span {
+
+    opacity:.6;
+
+    margin-left:auto;
+
+}
