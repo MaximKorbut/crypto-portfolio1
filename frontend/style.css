@@ -90,3 +90,26 @@ canvas{
     margin-left:auto;
 
 }
+#portfolio {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+#portfolio .search-result {
+
+    flex-wrap:wrap;
+
+}
+
+#portfolio input {
+
+    max-width:180px;
+
+    box-sizing:border-box;
+
+}
