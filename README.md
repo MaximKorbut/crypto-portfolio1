@@ -41,3 +41,18 @@ v2.0
 - Portfolio calculator
 - Market chart
 - Dark mode
+## Market History
+
+The application displays a 7-day Bitcoin price chart using historical
+market data from CoinGecko.
+
+### API Endpoints
+
+GET /  
+Returns API status.
+
+GET /prices  
+Returns current BTC, ETH and SOL prices.
+
+GET /history/{coin}  
+Returns historical price data for supported cryptocurrencies.
