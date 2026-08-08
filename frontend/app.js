@@ -142,3 +142,19 @@ card.innerText.toLowerCase().includes(value)
 });
 
 });
+const ctx = document.getElementById("priceChart");
+
+new Chart(ctx, {
+    type: "bar",
+    data: {
+        labels: ["Bitcoin", "Ethereum", "Solana"],
+        datasets: [{
+            label: "Price (USD)",
+            data: [
+                prices.bitcoin.usd,
+                prices.ethereum.usd,
+                prices.solana.usd
+            ]
+        }]
+    }
+});
