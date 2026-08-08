@@ -361,3 +361,27 @@ function removeCoin(coinId) {
 
     renderPortfolio();
 }
+async function loadPortfolioPrices() {
+
+    if (portfolio.length === 0) {
+        return {};
+    }
+
+    try {
+
+        const response = await fetch(
+            `http://127.0.0.1:8000/prices/${portfolio.join(",")}`
+        );
+
+        return await response.json();
+
+    } catch (error) {
+
+        console.error(
+            "Failed to load portfolio prices:",
+            error
+        );
+
+        return {};
+    }
+}
