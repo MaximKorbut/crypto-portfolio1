@@ -31,3 +31,15 @@ def get_history(coin="bitcoin", days=7):
     response.raise_for_status()
 
     return response.json()
+def search_coins(query: str):
+    response = requests.get(
+        "https://api.coingecko.com/api/v3/search",
+        params={
+            "query": query
+        },
+        timeout=10
+    )
+
+    response.raise_for_status()
+
+    return response.json()
