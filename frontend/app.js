@@ -82,7 +82,32 @@ async function loadPrices(){
 }
 
 function calculatePortfolio(){
+async function calculatePortfolio() {
 
+    const prices = await loadPortfolioPrices();
+
+    let total = 0;
+
+    portfolio.forEach(coin => {
+
+        const input =
+            document.getElementById(`amount-${coin}`);
+
+        const amount =
+            Number(input?.value || 0);
+
+        const price =
+            prices[coin]?.usd || 0;
+
+        total += amount * price;
+    });
+
+    document.getElementById("total").innerHTML =
+        "$" + total.toLocaleString(undefined, {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+}
 const btc =
 Number(document.getElementById("btc").value);
 
