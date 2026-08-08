@@ -289,3 +289,6 @@ function selectCoin(coinId) {
         `Selected cryptocurrency: ${coinId}`
     );
 }
+document.getElementById(
+    "searchResults"
+).innerHTML = "";
