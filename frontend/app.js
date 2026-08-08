@@ -144,17 +144,65 @@ card.innerText.toLowerCase().includes(value)
 });
 const ctx = document.getElementById("priceChart");
 
-new Chart(ctx, {
-    type: "bar",
-    data: {
-        labels: ["Bitcoin", "Ethereum", "Solana"],
-        datasets: [{
-            label: "Price (USD)",
-            data: [
-                prices.bitcoin.usd,
-                prices.ethereum.usd,
-                prices.solana.usd
-            ]
-        }]
+let priceChart = null;
+
+async function loadHistory() {
+
+    try {
+
+        const response = await fetch(
+            "http://127.0.0.1:8000/history/bitcoin"
+        );
+
+        const data = await response.json();
+
+        const labels = data.prices.map(item =>
+            new Date(item[0]).toLocaleDateString()
+        );
+
+        const values = data.prices.map(item =>
+            item[1]
+        );
+
+        const ctx =
+            document.getElementById("priceChart");
+
+        if (priceChart) {
+            priceChart.destroy();
+        }
+
+        priceChart = new Chart(ctx, {
+            type: "line",
+
+            data: {
+                labels: labels,
+
+                datasets: [{
+                    label: "Bitcoin - 7 Days",
+                    data: values,
+                    tension: 0.3,
+                    fill: false
+                }]
+            },
+
+            options: {
+                responsive: true,
+
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+
+    } catch (error) {
+
+        console.error(
+            "Failed to load price history:",
+            error
+        );
+
     }
-});
+}
+loadHistory();
