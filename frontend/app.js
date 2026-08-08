@@ -410,3 +410,28 @@ async function loadPortfolioPrices() {
         return {};
     }
 }
+container.innerHTML = portfolio.map(coin => `
+    <div class="search-result">
+
+        <strong>${coin.toUpperCase()}</strong>
+
+        <input
+            type="number"
+            min="0"
+            step="0.0001"
+            id="amount-${coin}"
+            placeholder="Amount"
+        >
+
+        <span id="value-${coin}">
+            $0.00
+        </span>
+
+        <button
+            onclick="removeCoin('${coin}')"
+        >
+            Remove
+        </button>
+
+    </div>
+`).join("");
