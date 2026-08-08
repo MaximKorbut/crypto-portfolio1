@@ -256,3 +256,36 @@ async function searchCoins() {
         console.error(error);
     }
 }
+const coins = data.coins.slice(0, 5);
+
+results.innerHTML = coins.map(coin => `
+    <div
+        class="search-result"
+        onclick="selectCoin('${coin.id}')"
+    >
+
+        <img
+            src="${coin.thumb}"
+            alt="${coin.name}"
+            width="30"
+        >
+
+        <strong>${coin.name}</strong>
+
+        <span>
+            ${coin.symbol.toUpperCase()}
+        </span>
+
+    </div>
+`).join("");
+function selectCoin(coinId) {
+
+    localStorage.setItem(
+        "selectedCoin",
+        coinId
+    );
+
+    alert(
+        `Selected cryptocurrency: ${coinId}`
+    );
+}
