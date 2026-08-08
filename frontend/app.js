@@ -297,3 +297,39 @@ function selectCoin(coinId) {
         `Added ${coinId} to your portfolio`
     );
 }
+function renderPortfolio() {
+
+    const container =
+        document.getElementById("portfolio");
+
+    if (portfolio.length === 0) {
+
+        container.innerHTML =
+            "<p>No cryptocurrencies added yet.</p>";
+
+        return;
+    }
+
+    container.innerHTML = portfolio.map(coin => `
+        <div class="search-result">
+
+            <strong>${coin}</strong>
+
+            <input
+                type="number"
+                min="0"
+                step="0.0001"
+                id="amount-${coin}"
+                placeholder="Amount"
+            >
+
+            <button
+                onclick="removeCoin('${coin}')"
+            >
+                Remove
+            </button>
+
+        </div>
+    `).join("");
+}
+renderPortfolio();
