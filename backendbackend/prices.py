@@ -43,3 +43,16 @@ def search_coins(query: str):
     response.raise_for_status()
 
     return response.json()
+def get_coin_prices(coins):
+    response = requests.get(
+        API_URL,
+        params={
+            "ids": ",".join(coins),
+            "vs_currencies": "usd"
+        },
+        timeout=10
+    )
+
+    response.raise_for_status()
+
+    return response.json()
