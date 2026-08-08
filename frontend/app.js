@@ -206,3 +206,53 @@ async function loadHistory() {
     }
 }
 loadHistory();
+async function searchCoins() {
+
+    const query =
+        document.getElementById("coinSearch").value.trim();
+
+    if (!query) {
+        return;
+    }
+
+    const results =
+        document.getElementById("searchResults");
+
+    results.innerHTML = "Searching...";
+
+    try {
+
+        const response = await fetch(
+            `http://127.0.0.1:8000/search/${query}`
+        );
+
+        const data = await response.json();
+
+        const coins = data.coins.slice(0, 5);
+
+        results.innerHTML = coins.map(coin => `
+            <div class="search-result">
+
+                <img
+                    src="${coin.thumb}"
+                    alt="${coin.name}"
+                    width="30"
+                >
+
+                <strong>${coin.name}</strong>
+
+                <span>
+                    ${coin.symbol.toUpperCase()}
+                </span>
+
+            </div>
+        `).join("");
+
+    } catch (error) {
+
+        results.innerHTML =
+            "Unable to search cryptocurrencies.";
+
+        console.error(error);
+    }
+}
