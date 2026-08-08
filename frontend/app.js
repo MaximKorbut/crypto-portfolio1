@@ -435,3 +435,21 @@ container.innerHTML = portfolio.map(coin => `
 
     </div>
 `).join("");
+function savePortfolioAmounts() {
+
+    const amounts = {};
+
+    portfolio.forEach(coin => {
+
+        const input =
+            document.getElementById(`amount-${coin}`);
+
+        amounts[coin] =
+            Number(input?.value || 0);
+    });
+
+    localStorage.setItem(
+        "portfolioAmounts",
+        JSON.stringify(amounts)
+    );
+}
