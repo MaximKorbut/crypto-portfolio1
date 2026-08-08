@@ -280,15 +280,20 @@ results.innerHTML = coins.map(coin => `
 `).join("");
 function selectCoin(coinId) {
 
-    localStorage.setItem(
-        "selectedCoin",
-        coinId
-    );
+    if (!portfolio.includes(coinId)) {
+
+        portfolio.push(coinId);
+
+        localStorage.setItem(
+            "portfolio",
+            JSON.stringify(portfolio)
+        );
+
+        renderPortfolio();
+
+    }
 
     alert(
-        `Selected cryptocurrency: ${coinId}`
+        `Added ${coinId} to your portfolio`
     );
 }
-document.getElementById(
-    "searchResults"
-).innerHTML = "";
