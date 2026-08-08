@@ -453,3 +453,22 @@ function savePortfolioAmounts() {
         JSON.stringify(amounts)
     );
 }
+function restorePortfolioAmounts() {
+
+    const saved =
+        JSON.parse(
+            localStorage.getItem("portfolioAmounts") || "{}"
+        );
+
+    portfolio.forEach(coin => {
+
+        const input =
+            document.getElementById(`amount-${coin}`);
+
+        if (input && saved[coin] !== undefined) {
+
+            input.value = saved[coin];
+
+        }
+    });
+}
