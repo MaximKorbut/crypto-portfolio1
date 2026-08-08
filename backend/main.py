@@ -1,5 +1,7 @@
 from fastapi import FastAPI
-from prices import get_prices, get_history
+@app.get("/search/{query}")
+def search(query: str):
+    return search_coins(query)
 app = FastAPI(
     title="Crypto Portfolio API",
     version="1.0.0"
